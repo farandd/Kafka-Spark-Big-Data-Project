@@ -5,7 +5,7 @@
 **NRP:** 5027231084
 
 
-##  Deskripsi Singkat
+##  Deskripsi
 
 Proyek ini bertujuan untuk memantau kondisi gudang penyimpanan yang berisi barang-barang sensitif seperti makanan, obat-obatan, dan elektronik secara **real-time**. Sistem menggunakan **Apache Kafka** untuk menerima data dari sensor suhu dan kelembaban, dan **PySpark Structured Streaming** untuk mengolah dan menganalisis data.
 
