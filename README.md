@@ -87,6 +87,9 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
 ```
 
+![image](https://github.com/user-attachments/assets/2b4440a5-95f9-4021-b1c4-7d1461b0d921)
+
+
 ### 2. Buat Kafka Topics
 
 ```bash
@@ -95,6 +98,8 @@ bin/kafka-topics.sh --create --topic sensor-suhu-gudang --bootstrap-server local
 bin/kafka-topics.sh --create --topic sensor-kelembaban-gudang --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 ```
 
+![image](https://github.com/user-attachments/assets/092aceb3-e03b-4b0f-bfcc-5131a14ef31b)
+
 ### 3. Jalankan Producer
 
 ```bash
@@ -102,42 +107,17 @@ python producer_suhu.py
 python producer_kelembaban.py
 ```
 
+![image](https://github.com/user-attachments/assets/fc19af33-e252-41c5-8fd8-f5379cf38fff)
+
+![image](https://github.com/user-attachments/assets/9d3358fc-70c8-4f40-b15c-c5941918c6db)
+
 ### 4. Jalankan PySpark Streaming
 
 ```bash
 spark-submit consumer_streaming.py
 ```
+![image](https://github.com/user-attachments/assets/6a38414a-1965-472c-b282-534ee9425b95)
 
----
-
-##  Contoh Output Console
-
-```txt
-[Peringatan Suhu Tinggi] Gudang G2: Suhu 85°C
-[Peringatan Kelembaban Tinggi] Gudang G3: Kelembaban 74%
-
-[PERINGATAN KRITIS] Gudang G1:
- - Suhu: 84°C
- - Kelembaban: 73%
- - Status: Bahaya tinggi! Barang berisiko rusak
-
-Gudang G2:
- - Suhu: 78°C
- - Kelembaban: 68%
- - Status: Aman
-
-Gudang G3:
- - Suhu: 85°C
- - Kelembaban: 65%
- - Status: Suhu tinggi, kelembaban normal
-
-Gudang G4:
- - Suhu: 79°C
- - Kelembaban: 75%
- - Status: Kelembaban tinggi, suhu aman
-```
-
----
 
 ##  Struktur Folder
 
